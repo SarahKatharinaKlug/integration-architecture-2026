@@ -1,0 +1,5 @@
+org\iar\demo\DocumentManager.class
+org\iar\demo\ReportDistributor.class
+org\hbrs\ia\model\SalesMan.class
+org\iar\demo\internal\Document.class
+org\hbrs\ia\code\ManagePersonal.class
