@@ -1,0 +1,159 @@
+
+openapi: 3.0.0
+
+info:
+  title: Salesman Management API
+  description: REST API zur Verwaltung von Salesman und Performance-Datensätzen.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000/api
+
+paths:
+
+  /salesmen:
+    get:
+      summary: Alle Salesman abrufen
+      responses:
+        '200':
+          description: Liste aller Salesman
+
+    post:
+      summary: Neuen Salesman erstellen
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesMan'
+      responses:
+        '201':
+          description: Salesman erfolgreich erstellt
+
+  /salesmen/{sid}:
+    parameters:
+      - name: sid
+        in: path
+        required: true
+        description: ID des Salesman
+        schema:
+          type: integer
+
+    get:
+      summary: Einen Salesman abrufen
+      responses:
+        '200':
+          description: Salesman gefunden
+        '404':
+          description: Salesman nicht gefunden
+
+    delete:
+      summary: Salesman löschen
+      responses:
+        '204':
+          description: Salesman erfolgreich gelöscht
+        '404':
+          description: Salesman nicht gefunden
+
+  /salesmen/{sid}/performance-records:
+    parameters:
+      - name: sid
+        in: path
+        required: true
+        description: ID des Salesman
+        schema:
+          type: integer
+
+    get:
+      summary: Alle Performance-Datensätze eines Salesman abrufen
+      responses:
+        '200':
+          description: Liste der Performance-Datensätze
+        '404':
+          description: Salesman nicht gefunden
+
+    post:
+      summary: Performance-Datensatz hinzufügen
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SocialPerformanceRecord'
+      responses:
+        '201':
+          description: Performance-Datensatz erfolgreich hinzugefügt
+        '404':
+          description: Salesman nicht gefunden
+
+    delete:
+      summary: Alle Performance-Datensätze eines Salesman löschen
+      responses:
+        '204':
+          description: Performance-Datensätze erfolgreich gelöscht
+        '404':
+          description: Salesman nicht gefunden
+
+  /salesmen/{sid}/performance-records/{year}:
+    parameters:
+      - name: sid
+        in: path
+        required: true
+        description: ID des Salesman
+        schema:
+          type: integer
+      - name: year
+        in: path
+        required: true
+        description: Jahr der Performance-Datensätze
+        schema:
+          type: integer
+
+    get:
+      summary: Performance-Datensätze eines bestimmten Jahres abrufen
+      responses:
+        '200':
+          description: Liste der Performance-Datensätze des Jahres
+        '404':
+          description: Salesman nicht gefunden
+
+
+components:
+  schemas:
+    SalesMan:
+      type: object
+      properties:
+        firstname:
+          type: string
+          description: Vorname des Verkäufers
+        lastname:
+          type: string
+          description: Nachname des Verkäufers
+        sid:
+          type: integer
+          description: Eindeutige ID des Verkäufers
+      required:
+        - firstname
+        - lastname
+        - sid
+
+    SocialPerformanceRecord:
+      type: object
+      properties:
+        goalDescription:
+          type: string
+          description: Beschreibung des Ziels
+        targetValue:
+          type: integer
+          description: Zielwert
+        actualValue:
+          type: integer
+          description: Tatsächlich erreichter Wert
+        year:
+          type: integer
+          description: Jahr des Performance-Datensatzes
+      required:
+        - goalDescription
+        - targetValue
+        - actualValue
+        - year

@@ -1,0 +1,242 @@
+{
+  "info": {
+    "_postman_id": "d61d6bd8-ec2f-4693-97b5-8504bad9e58d",
+    "name": "Integration Architectures",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58878183",
+    "_collection_link": "https://go.postman.co/collection/58878183-d61d6bd8-ec2f-4693-97b5-8504bad9e58d?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get all Salesman",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/salesmen",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salesmen"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get one Salesman",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/salesmen/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salesmen",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all Performance Records",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/salesmen/2/performance-records",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salesmen",
+            "2",
+            "performance-records"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Performance Records of one year",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/salesmen/3/performance-records/2026",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salesmen",
+            "3",
+            "performance-records",
+            "2026"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post new Salesman",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstname\": \"Test\",\r\n    \"lastname\": \"Salesman\",\r\n    \"sid\": 5\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/salesmen",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salesmen"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post new Performance Record",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"goalDescription\": \"Umsatzziel\",\r\n    \"targetValue\": 100,\r\n    \"actualValue\": 120,\r\n    \"year\": 2026\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/salesmen/5/performance-records",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salesmen",
+            "5",
+            "performance-records"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Test Post Tests",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/salesmen/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salesmen",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Performance Records",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/salesmen/5/performance-records",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salesmen",
+            "5",
+            "performance-records"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Salesman",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/salesmen/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salesmen",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Test Delete Tests",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/salesmen/5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "salesmen",
+            "5"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
